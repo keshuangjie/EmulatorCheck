@@ -17,6 +17,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (Tools.isEmulator()) {
+            throw new RuntimeException("can not run in emulator");
+        }
+
         setContentView(R.layout.activity_main);
 
         datas = Tools.getInfos();
