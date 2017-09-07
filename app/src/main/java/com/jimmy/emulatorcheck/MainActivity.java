@@ -18,13 +18,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (Tools.isEmulator()) {
+        if (EmulatorCheckTool.isEmulator()) {
             throw new RuntimeException("can not run in emulator");
         }
 
         setContentView(R.layout.activity_main);
 
-        datas = Tools.getInfos();
+        datas = MobileData.getInfos();
 
         recyclerView = findViewById(R.id.recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
